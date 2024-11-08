@@ -1,0 +1,2 @@
+docker run --dp 3307:3306 --name mariadb_server --env MARIDB_USER=mariadb_user --env MARIADB_PASSWORD=110402 --env MARIADB_ROOT_PASSWORD=r00t110402 --env MARIADB_DATABASE=stockdb mariadb:lts
+docker ps

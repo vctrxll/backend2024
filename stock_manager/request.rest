@@ -1,1 +1,24 @@
-GET http://localhost:3000/users/4
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/6
+### Crear nuevo usuario
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "username": "Lizbeth",
+  "password": "lizbeth",
+  "email" : "lizbethmendezcruz@gmail.com"
+}
+
+### Actualizar usuario
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "John Doe Updated"
+}
+
+### Eliminar usuario
+DELETE http://localhost:3000/users/6
