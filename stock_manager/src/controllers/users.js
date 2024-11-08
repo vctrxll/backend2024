@@ -48,11 +48,6 @@ const getUserById = async (req = request, res= response) =>{
 
     //const user = users.find(user => user.id === +id);
 
-    if(!user){
-        res.status(404).send('User not found')
-        return;
-    }
-
 }
 //agregar un usuario
 const CreateUser = async (req = request, res = response) => {
@@ -97,8 +92,8 @@ const updateUser = async (req = request, res = response) => {
     const { username } = req.body;
 
     if (isNaN(id) || !username ) {
-        Res.status(400).send("Invalid request");
-        Return;
+        res.status(400).send("Invalid request");
+        return;
     }
 
     let conn;
