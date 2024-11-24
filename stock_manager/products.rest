@@ -1,0 +1,74 @@
+# Obtener todos los productos activos
+GET http://localhost:3000/products
+
+###
+# Obtener un producto por ID
+GET http://localhost:3000/products/1
+
+### Crear un nuevo producto (con precio válido)
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "product": "Mesa de vidrio",
+  "description": "Mesa de ificina",
+  "stock": 10,
+  "measurement_unit": "piece",
+  "price": 999.99,
+  "discount": 0.10
+}
+
+### Crear un producto más económico
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "product": "Silla de madera",
+  "description": "Silla de madera de pino",
+  "stock": 20,
+  "measurement_unit": "piece",
+  "price": 150.50,
+  "discount": 0.05
+}
+
+### Crear un producto sin descuento
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "product": "Cable eléctrico",
+  "description": "Cable eléctrico calibre 12",
+  "stock": 100,
+  "measurement_unit": "meters",
+  "price": 25.50
+}
+
+###
+# Actualizar un producto (actualización parcial)
+PUT http://localhost:3000/products/4
+Content-Type: application/json
+
+{
+  "description": "Mesa de oficina",
+  "stock": 15,
+  "price": 1450.00,
+  "discount": 0.15
+}
+
+###
+# Actualizar un producto (actualización completa)
+PUT http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "product": "Mesa de madera premium",
+  "description": "Mesa de madera de roble macizo para comedor",
+  "stock": 8,
+  "measurement_unit": "piece",
+  "price": 999.00,
+  "discount": 0.05
+}
+
+###
+# Eliminar un producto (cambio de is_active a 0)
+DELETE http://localhost:3000/products/1
