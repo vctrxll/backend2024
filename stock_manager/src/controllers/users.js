@@ -2,12 +2,6 @@ const {request, response} = require ('express');
 const pool = require('../../db/connection');
 const { usersQueries } = require('../models/users');
 
-//const users = [
-//    {id: 1, name: 'Jhon Doe'},
-//    {id: 2, name: 'Jane Doe'},
-//    {id: 3, name: 'Bob Smith'},
-//];
-
 const getAllUsers = async (req = request, res= response) => {
     let conn;
     try{
@@ -77,14 +71,6 @@ const CreateUser = async (req = request, res = response) => {
     }finally{
         if(conn) conn.end();
     }
-
-
-    //const user = user.find(user => user.name === name);
-
-    //if(user){
-    //    res.status(409).send('User already exits');
-    //}
-
 }
 
 const updateUser = async (req = request, res = response) => {
