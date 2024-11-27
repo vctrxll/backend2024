@@ -1,0 +1,49 @@
+### Obtener todas las compras
+GET http://localhost:3000/purchases
+
+### Obtener una compra por ID
+GET http://localhost:3000/purchases/12
+Content-Type: application/json
+
+### Crear una nueva compra
+POST http://localhost:3000/purchases
+Content-Type: application/json
+
+{
+  "id": 1,
+  "products_suppliers_id": 4,
+  "quantity": 10,
+  "payment_method": "cash",
+  "ticket": "ticket123",
+  "invoice": "invoice456",
+  "price": 200.50
+}
+
+### Probar error al crear una compra con ID existente
+POST http://localhost:3000/purchases
+Content-Type: application/json
+
+{
+  "id": 1,
+  "products_suppliers_id": 1,
+  "quantity": 10,
+  "payment_method": "credit_card",
+  "ticket": "ticket123",
+  "invoice": "invoice456",
+  "price": 200.50
+}
+
+### Probar error al crear una compra con un products_suppliers_id inválido
+POST http://localhost:3000/purchases
+Content-Type: application/json
+
+{
+  "id": 6,
+  "products_suppliers_id": 9999,
+  "quantity": 10,
+  "payment_method": "credit_card",
+  "ticket": "ticket123",
+  "invoice": "invoice456",
+  "price": 200.50
+}
+
