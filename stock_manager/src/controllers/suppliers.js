@@ -26,7 +26,7 @@ const getSuppliersByRFC = async (req = request, res = response) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        const suppliers =  await conn.query(suppliersQueries.getByRFC, [rfc]);
+        const suppliers =  await conn.query(suppliersQueries.getByRFC, [+rfc]);
         res.send(suppliers);
     }catch (error) {
         res.status(500).send(error);
@@ -85,7 +85,7 @@ const updateSupplier = async (req = request, res = response) => {
             return;
         }
 
-        const result = await conn.query(suppliersQueries.update, [name, description, number_phone, email, address, rfc]);
+        const result = await conn.query(suppliersQueries.update, [name, description, number_phone, email, address, +rfc]);
         if(result.affectedRows ===0){
             res.status(500).send('Not be updated')
             return;

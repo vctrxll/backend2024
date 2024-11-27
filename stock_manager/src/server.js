@@ -3,6 +3,7 @@ const usersRoutes = require('./routes/users');
 const staffRoutes = require('./routes/staff');
 const suppliersRoutes = require('./routes/suppliers');
 const productsRoutes = require('./routes/products');
+const purchasesRoutes = require('./routes/purchases');
 
 
 class Server {
@@ -23,6 +24,7 @@ class Server {
         this.app.use('/staff', staffRoutes); // Nueva ruta para staff
         this.app.use('/suppliers', suppliersRoutes);
         this.app.use('/products', productsRoutes);
+        this.app.use('/purchases', purchasesRoutes);
     }
 
     start(){
