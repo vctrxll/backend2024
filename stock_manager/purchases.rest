@@ -27,7 +27,7 @@ Content-Type: application/json
   "id": 1,
   "products_suppliers_id": 1,
   "quantity": 10,
-  "payment_method": "credit_card",
+  "payment_method": "credit",
   "ticket": "ticket123",
   "invoice": "invoice456",
   "price": 200.50
