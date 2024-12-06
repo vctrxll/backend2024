@@ -1,5 +1,7 @@
-const Server = require('./server');
+const Server = require ('./server');
 
-const server = new Server();
+const server =new Server();
+
+//server.seeder();
 
 server.start();
