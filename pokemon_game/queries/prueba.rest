@@ -1,0 +1,43 @@
+### Obtener todos los pokemones
+GET http://localhost:3000/pokemons
+Content-Type: application/json
+
+###
+
+### Obtener un Pokémon por ID
+GET http://localhost:3000/pokemons/1
+Content-Type: application/json
+
+###
+
+### Obtener 3 Pokemones aleatorios
+GET http://localhost:3000/pokemons/random
+Content-Type: application/json
+
+###
+
+### Crear un nuevo Pokémon
+POST http://localhost:3000/pokemons
+Content-Type: application/json
+
+{
+  "name": "Pikachu",
+  "image": "https://example.com/pikachu.png"
+}
+
+###
+
+### Actualizar un Pokémon existente
+PUT http://localhost:3000/pokemons/1
+Content-Type: application/json
+
+{
+  "name": "Raichu",
+  "image": "https://example.com/raichu.png"
+}
+
+###
+
+### Eliminar un Pokémon
+DELETE http://localhost:3000/pokemons/1
+Content-Type: application/json
