@@ -9,6 +9,7 @@ const pokemonModel = {
     getAll: 'SELECT * FROM pokemon', // Obtener todos los Pokémon
 
     get3RandomPokemons: 'SELECT * FROM pokemon ORDER BY RAND() LIMIT 3',
+    
     // 2. **getById**: Consulta para obtener un Pokémon específico por su ID.
     //    El símbolo '?' se usa como marcador de posición para pasar dinámicamente el ID del Pokémon.
     getById: 'SELECT * FROM pokemon WHERE id = ?', // Obtener un Pokémon por su ID
@@ -20,6 +21,7 @@ const pokemonModel = {
     // 4. **getByImage**: Consulta para obtener un Pokémon específico por su imagen.
     //    Similar a la consulta anterior, usa el símbolo '?' para pasar la URL de la imagen del Pokémon.
     getByImage: 'SELECT * FROM pokemon WHERE image = ?', // Obtener un Pokémon por su imagen
+
 
     // 5. **create**: Consulta para insertar un nuevo Pokémon en la base de datos.
     //    Los valores de "name" e "image" se pasan como parámetros a través de los marcadores de posición ('?, ?').
