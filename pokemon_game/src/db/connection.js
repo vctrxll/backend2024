@@ -5,7 +5,7 @@ const config={
     user: 'root',
     password: 'r00tP4sw0rd',
     database: 'pokemon_game',
-    port: 3307,
+    port: 3306,
     connectionLimit: 10
 
 };

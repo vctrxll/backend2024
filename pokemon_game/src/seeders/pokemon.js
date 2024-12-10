@@ -16,7 +16,6 @@ const pokemonSeeder = async() => {
     let conn;
 try{
  conn = await pool.getConnection();
-
     await conn.query('SET FOREIGN_KEY_CHECKS = 0');
     await conn.query('TRUNCATE pokemon');
     await conn.query('SET FOREIGN_KEY_CHECKS = 1');
