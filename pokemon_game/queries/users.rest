@@ -4,8 +4,7 @@ Accept: application/json
 
 ###
 ## Obtener un usuario por ID
-GET http://localhost:3000/users/1
-Accept: application/json
+GET http://localhost:3000/users/2
 
 ###
 POST http://localhost:3000/users

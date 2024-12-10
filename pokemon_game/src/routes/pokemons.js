@@ -27,16 +27,16 @@ const routes = Router();
 // y devuelve todos los Pokémon almacenados en la base de datos.
 routes.get('/', getAllPokemons);
 
+// Definir la ruta GET para obtener 3 Pokémon aleatorios.
+// La función `get3RandomPokemons` se ejecuta cuando se realiza una solicitud GET a la ruta "/play",
+// y devuelve tres Pokémon aleatorios desde la base de datos o un conjunto predefinido.
+routes.get('/play', get3RandomPokemons);
+
 // Definir la ruta GET para obtener un Pokémon específico por su ID.
 // El parámetro ":id" en la ruta permite recibir un ID dinámico para obtener un Pokémon por su identificador único.
 // La función `getPokemonById` se ejecuta cuando se realiza una solicitud GET a la ruta "/:id",
 // donde `:id` es un valor dinámico que se utiliza para buscar el Pokémon específico.
 routes.get('/:id', getPokemonById);
-
-// Definir la ruta GET para obtener 3 Pokémon aleatorios.
-// La función `get3RandomPokemons` se ejecuta cuando se realiza una solicitud GET a la ruta "/play",
-// y devuelve tres Pokémon aleatorios desde la base de datos o un conjunto predefinido.
-routes.get('/play', get3RandomPokemons);
 
 // Definir la ruta POST para crear un nuevo Pokémon.
 // La función `createPokemon` se ejecuta cuando se realiza una solicitud POST a la ruta "/",

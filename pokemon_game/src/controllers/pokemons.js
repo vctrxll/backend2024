@@ -77,7 +77,17 @@ const getPokemonById = async (req = request, res = response) => {
  * @param {Object} res - Objeto de respuesta de Express
  */
 const get3RandomPokemons = async (req = request, res = response) => {
-    // Este endpoint aún no está implementado, se añadirá funcionalidad en el futuro
+    let conn;
+    try {
+        conn = await pool.getConnection();
+        const pokemons = await conn.query(pokemonModel.get3RandomPokemons);
+        res.send(pokemons);
+
+    }catch (error) {
+        res.status(500).send(error);
+    }finally {
+        if (conn) conn.end();
+    }
 };
 
 /**

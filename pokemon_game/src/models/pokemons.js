@@ -8,6 +8,7 @@
 const pokemonModel = {
     getAll: 'SELECT * FROM pokemon', // Obtener todos los Pokémon
 
+    get3RandomPokemons: 'SELECT * FROM pokemon ORDER BY RAND() LIMIT 3',
     // 2. **getById**: Consulta para obtener un Pokémon específico por su ID.
     //    El símbolo '?' se usa como marcador de posición para pasar dinámicamente el ID del Pokémon.
     getById: 'SELECT * FROM pokemon WHERE id = ?', // Obtener un Pokémon por su ID
