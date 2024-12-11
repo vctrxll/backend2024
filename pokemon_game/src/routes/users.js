@@ -13,8 +13,10 @@ const {
     getUserById,  // Función para obtener un usuario por su ID
     CreateUser,   // Función para crear un nuevo usuario
     updateUser,   // Función para actualizar un usuario existente
-    destroyUser   // Función para eliminar un usuario
+    destroyUser, userProtected   // Función para eliminar un usuario
 } = require('../controllers/users');
+
+const verifyToken = require('../middlewares/verifyToken');
 
 // Crear una nueva instancia del enrutador de Express.
 // El enrutador se usará para definir las rutas y asociarlas con las funciones correspondientes del controlador.
@@ -23,6 +25,8 @@ const router = Router();
 // Definir la ruta GET para obtener todos los usuarios.
 // La función `getAllUsers` se ejecuta cuando se realiza una solicitud GET a la ruta "/".
 router.get('/', getAllUsers);
+
+router.get('/protected', verifyToken,userProtected);
 
 // Definir la ruta GET para obtener un usuario por su ID.
 // El parámetro ":id" en la ruta permite recibir un ID dinámico.
@@ -46,6 +50,7 @@ router.put('/:id', updateUser);
 // La función `destroyUser` se ejecuta cuando se realiza una solicitud DELETE a la ruta "/:id",
 // y el ID proporcionado se utiliza para identificar al usuario que se desea eliminar de la base de datos.
 router.delete('/:id', destroyUser);
+
 
 // Exportar el enrutador para que pueda ser utilizado en otras partes de la aplicación, como en el archivo principal del servidor.
 // El archivo donde se importan estas rutas puede asociarlas con la URL base correspondiente, como "/users".

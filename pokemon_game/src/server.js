@@ -2,6 +2,7 @@
 const express = require('express'); // Framework para crear aplicaciones web y API en Node.js
 const usersRoutes = require('./routes/users'); // Archivo que contiene las rutas relacionadas con usuarios
 const pokemonsRoutes = require('./routes/pokemons'); // Archivo que contiene las rutas relacionadas con pokémon
+const authRoutes = require('./routes/auth');
 const pokemonSeeder = require('./seeders/pokemon'); // Archivo que inicializa datos relacionados con pokémon en la base de datos o un almacenamiento
 
 /**
@@ -37,6 +38,7 @@ class Server {
     routes() {
         this.app.use('/users', usersRoutes); // Asocia el prefijo '/users' con las rutas definidas en `usersRoutes`
         this.app.use('/pokemons', pokemonsRoutes); // Asocia el prefijo '/pokemons' con las rutas definidas en `pokemonsRoutes`
+        this.app.use('/auth', authRoutes)
     }
 
     /**

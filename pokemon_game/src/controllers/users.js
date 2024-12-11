@@ -4,6 +4,15 @@ const bcrypt = require('bcrypt'); // Librería para gestionar el hashing de cont
 const pool = require('../db/connection'); // Conexión al pool de la base de datos
 const { userQueries } = require('../models/users'); // Consultas SQL relacionadas con los usuarios
 
+require('dotenv').config();
+
+const secrets = process.env.SECRET;
+
+const userProtected = async (req = request, res = response) => {
+    res.send({ messange: "You have access!!" });
+}
+
+
 // Definir el número de rondas para generar el hash de las contraseñas
 const saltRounds = 10;
 
@@ -241,4 +250,5 @@ module.exports = {
     CreateUser,
     updateUser,
     destroyUser,
+    userProtected,
 };
